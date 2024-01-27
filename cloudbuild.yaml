@@ -21,3 +21,5 @@ steps:
   - 'gcr.io/gcpproject-410115/eurekaserver'
   - '--platform'
   - 'managed'
+  - '--region'
+  - 'us-central1'
