@@ -5,10 +5,10 @@ steps:
   - '-c'
   - 'mvn clean install -Dmaven.test.skip=true'
 
-# Step 3: Build a Docker image with Java 17 and the Spring Boot application JAR
+# Step 2: Build a Docker image with Java 17 and the Spring Boot application JAR
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/gcpproject-410115/eurekarepo', '--build-arg', 'JAR_FILE=target/*.jar', '-f', 'Dockerfile', '.']
+  args: ['build', '-t', 'gcr.io/gcpproject-410115/eurekaserver', '--build-arg', 'JAR_FILE=target/*.jar', '-f', 'Dockerfile', '.']
 
-# Step 4: Push the Docker image to Container Registry
+# Step 3: Push the Docker image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/gcpproject-410115/eurekarepo']
+  args: ['push', 'gcr.io/gcpproject-410115/eurekaserver']
