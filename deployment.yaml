@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: eureka-app
-        image: us-east1-docker.pkg.dev/gcpproject-410115/myrepo/repo:v1
+        image: gcr.io/gcpproject-410115/eurekaserver
         ports:
         - containerPort: 8761
 ---
