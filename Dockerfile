@@ -1,11 +1,12 @@
 # Use an official OpenJDK runtime as a parent image
-FROM openjdk:11-jre-slim
+FROM openjdk:17-alpine
+
 
 # Set the working directory in the container
 
 
 # Copy the JAR file into the container at /app
-COPY target/eurekaerver-service-0.0.1-SNAPSHOT.jar eurekaerver-service-0.0.1.jar
+COPY target/eurekaerver-service-0.0.1-SNAPSHOT.jar eurekaserver.jar
 
 # Expose the port that your Spring Boot application will run on
 EXPOSE 8761
@@ -14,4 +15,4 @@ EXPOSE 8761
 # ENV SPRING_PROFILES_ACTIVE=production
 
 # Command to run your application
-CMD ["java", "-jar", "eurekaerver-service-0.0.1.jar"]
+CMD ["java", "-jar", "eurekaserver.jar"]
