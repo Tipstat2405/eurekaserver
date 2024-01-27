@@ -7,8 +7,8 @@ steps:
 
 # Step 3: Build a Docker image with Java 17 and the Spring Boot application JAR
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/eurekarepo', '--build-arg', 'JAR_FILE=target/*.jar', '-f', 'Dockerfile', '.']
+  args: ['build', '-t', 'gcr.io/gcpproject-410115/eurekarepo', '--build-arg', 'JAR_FILE=target/*.jar', '-f', 'Dockerfile', '.']
 
 # Step 4: Push the Docker image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/eurekarepo']
+  args: ['push', 'gcr.io/gcpproject-410115/eurekarepo']
