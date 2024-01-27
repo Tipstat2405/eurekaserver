@@ -1,5 +1,5 @@
 steps:
   # Step 1: Build the Spring Boot application using Maven
-  - name: 'maven:3.8.1-jdk-11'
+  - name: 'maven:3.8.4-openjdk-17'
     entrypoint: 'mvn'
     args: ['clean', 'install']
