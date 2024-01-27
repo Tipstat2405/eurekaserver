@@ -12,14 +12,11 @@ steps:
 # Step 3: Push the Docker image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/gcpproject-410115/eurekaserver']
-- name: 'gcr.io/cloud-builders/gcloud'
+
+# deploy container image to GKE
+- name: "gcr.io/cloud-builders/gke-deploy"
   args:
-  - 'run'
-  - 'deploy'
-  - 'eurekaserverrun'
-  - '--image'
-  - 'gcr.io/gcpproject-410115/eurekaserver'
-  - '--platform'
-  - 'managed'
-  - '--region'
-  - 'us-central1'
+  - run
+  - --filename=deployment.yaml
+  - --location=us-central1
+  - --cluster=mycluster
